@@ -1,0 +1,52 @@
+﻿@model IEnumerable<LayerEntity.Entities.Yorum>
+
+@{
+    ViewData["Title"] = "AdminYorumListeleme";
+    Layout = "~/Views/Shared/AdminSablon.cshtml";
+}
+
+<h1>Yorum Listeleme</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.YorumKullaniciAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YorumBasligi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YorumIcerigi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YorumDurumu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yazi)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YorumKullaniciAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YorumBasligi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YorumIcerigi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YorumDurumu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yazi.Baslik)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

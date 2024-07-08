@@ -1,0 +1,68 @@
+﻿@model LayerEntity.Entities.Yazi
+
+@{
+    ViewData["Title"] = "AdminYaziSil";
+    Layout = "~/Views/Shared/AdminSablon.cshtml";
+}
+
+<h1>Yazı Sil</h1>
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Baslik)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Icerik)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KucukResim)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KucukResim)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BuyukResim)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BuyukResim)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EklenmeTarihi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EklenmeTarihi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.YaziDurumu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YaziDurumu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kategori)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kategori.KategoriAciklamasi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Yazar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Yazar.YazarAciklamasi)
+        </dd>
+    </dl>
+    
+    <form asp-action="AdminYaziSil">
+        <input type="hidden" asp-for="YaziID" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="AdminYaziListeleme">Listeye Dön</a>
+    </form>
+</div>

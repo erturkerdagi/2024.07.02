@@ -1,0 +1,64 @@
+﻿@model IEnumerable<LayerEntity.Entities.Yazar>
+
+@{
+    ViewData["Title"] = "AdminYazarListeleme";
+    Layout = "~/Views/Shared/AdminSablon.cshtml";
+}
+<h1>Yazar Listeleme</h1>
+<p>
+    <a asp-action="AdminYazarEkleme" class="btn btn-success">Yeni Yazar Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.YazarAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YazarAciklamasi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YazarResmi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YazarEposta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YazarSifre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YazarDurumu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.YazarAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YazarAciklamasi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YazarResmi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YazarEposta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YazarSifre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YazarDurumu)
+            </td>
+            <td>
+                <a asp-action="AdminYazarGuncelle" asp-route-id="@item.YazarID" class="btn btn-info">Güncelle</a> |
+                <a asp-action="AdminYazarDetay" asp-route-id="@item.YazarID" class="btn btn-warning">Detay</a> |
+                <a asp-action="AdminYazarSil" asp-route-id="@item.YazarID" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

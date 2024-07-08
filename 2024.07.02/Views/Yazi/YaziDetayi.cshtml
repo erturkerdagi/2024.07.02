@@ -1,0 +1,28 @@
+﻿@model Tuple<LayerEntity.Entities.Yazi, LayerEntity.Entities.Yorum>
+
+@{
+    ViewData["Title"] = "YaziDetayi";
+    Layout = "~/Views/Shared/OnYuzSablon.cshtml";
+}
+<h1>@Model.Item1.Baslik</h1>
+<div class="col-12">
+    <div>
+        <img src="~/images/@Model.Item1.BuyukResim" style="width:500px" />
+        <p>@Model.Item1.EklenmeTarihi - @Model.Item1.Yazar.YazarAdi</p>
+        <p>
+            @Model.Item1.Icerik
+        </p>
+        <span>@Model.Item1.Kategori.KategoriAdi</span>
+    </div>
+    <br />
+    <div>
+        @await Html.PartialAsync("~/Views/Yazi/YorumEkle.cshtml",Model.Item2)
+    </div>
+    <br />
+    <div>
+        @await Component.InvokeAsync("YaziYorumlari", new {id = ViewBag.YaziID })
+    </div>
+    <div>
+        @await Component.InvokeAsync("YazarinYazilari", new { id = ViewBag.YazarID })
+    </div>
+</div>

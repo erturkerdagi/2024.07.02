@@ -1,0 +1,53 @@
+﻿@model LayerEntity.Entities.Yazar
+
+@{
+    ViewData["Title"] = "AdminYazarDetay";
+    Layout = "~/Views/Shared/AdminSablon.cshtml";
+}
+
+<h1>Yazar Detay</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.YazarAdi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YazarAdi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.YazarAciklamasi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YazarAciklamasi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.YazarResmi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YazarResmi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.YazarEposta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YazarEposta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.YazarSifre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YazarSifre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.YazarDurumu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YazarDurumu)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="AdminYazarGuncelleme" asp-route-id="@Model?.YazarID" class="btn btn-warning">Güncelle</a> |
+    <a asp-action="AdminYazarListeleme" class="btn btn-success">Listeye Dön</a>
+</div>

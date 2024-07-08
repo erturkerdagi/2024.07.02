@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="~/fontawesome/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/templatemo-xtra-blog.css" rel="stylesheet">
+</head>
+<body>
+    <header class="tm-header" id="tm-header">
+        <div class="tm-header-wrapper">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="tm-site-header">
+                <a href="~/Yazi/Yazilar">
+                    <span class="logoText">Blog Projesi</span>
+                </a>
+            </div>
+            <nav class="tm-nav" id="tm-nav">
+                <ul>
+                    <li class="tm-nav-item active">
+                        <a href="~/Yazi/Yazilar" class="tm-nav-link">
+                            <i class="fas fa-home"></i>
+                            Anasayfa
+                        </a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="~/Yazar/Yazarlar" class="tm-nav-link">
+                            <i class="fas fa-pen"></i>
+                            Yazarlar
+                        </a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="~/Kategori/Kategoriler" class="tm-nav-link">
+                            <i class="fas fa-pen"></i>
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="~/Hakkinda/Hakkinda" class="tm-nav-link">
+                            <i class="fas fa-users"></i>
+                            Hakkında
+                        </a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="~/Yazi/SonYazilar" class="tm-nav-link">
+                            <i class="fas fa-users"></i>
+                            Son Yazılar
+                        </a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="~/Yazi/EnCokYorumlananYazilar" class="tm-nav-link">
+                            <i class="fas fa-users"></i>
+                            En Çok Yorumlanan Yazılar
+                        </a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="~/Yazi/EnCokOkunanYazilar" class="tm-nav-link">
+                            <i class="fas fa-users"></i>
+                            En Çok Okunan Yazılar
+                        </a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="~/Bulten/BultenKullaniciEkle" class="tm-nav-link">
+                            <i class="far fa-comments"></i>
+                            Bülten Kaydı
+                        </a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="~/Bulten/BultenMailGonder" class="tm-nav-link">
+                            <i class="far fa-comments"></i>
+                            Bülten Gönder
+                        </a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="~/Mesaj/MesajGonder" class="tm-nav-link">
+                            <i class="far fa-comments"></i>
+                            İletişim
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <main class="tm-main">
+            <div class="row tm-row">
+                @RenderBody()
+            </div>
+            <footer class="row tm-row">
+                <hr class="col-12">
+                <div class="col-md-6 col-12 tm-color-gray">
+                    Tasarım: Şablon
+                </div>
+                <div class="col-md-6 col-12 tm-color-gray tm-copyright">
+                    Copyright 2024 - Ertürk ERDAĞI Blog Projesi
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/templatemo-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿@model LayerEntity.Entities.Mesaj
+
+@{
+    ViewData["Title"] = "AdminMesajDetay";
+    Layout = "~/Views/Shared/AdminSablon.cshtml";
+}
+
+<h1>Mesaj Detay</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MesajKullaniciAdi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MesajKullaniciAdi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MesajKullaniciEposta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MesajKullaniciEposta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Konu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Konu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MesajIcerik)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MesajIcerik)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MesajTarihi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MesajTarihi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MesajDurumu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MesajDurumu)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="MesajListeleme">Listeye Dön</a>
+</div>

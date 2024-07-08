@@ -1,0 +1,49 @@
+﻿@model IEnumerable<LayerEntity.Entities.Kategori>
+
+@{
+    ViewData["Title"] = "AdminKategoriListeleme";
+    Layout = "~/Views/Shared/AdminSablon.cshtml";
+}
+
+<h1>Kategoriler</h1>
+
+<p>
+    <a asp-action="AdminKategoriEkle">Yeni Kategori Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KategoriAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KategoriAciklamasi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KategoriDurum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategoriAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategoriAciklamasi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategoriDurum)
+                </td>
+                <td>
+                    <a asp-action="AdminKategoriGuncelle" asp-route-id="@item.KategoriID">Güncelle</a> |
+                    <a asp-action="AdminKategoriDetay" asp-route-id="@item.KategoriID">Detay</a> |
+                    <a asp-action="AdminKategoriSil" asp-route-id="@item.KategoriID">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

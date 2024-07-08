@@ -1,0 +1,30 @@
+﻿@model List<LayerEntity.Entities.Yazi>
+@{
+    ViewData["Title"] = "Kategori Yazıları";
+    Layout = "~/Views/Shared/OnYuzSablon.cshtml";
+}
+
+<h1>Kategoriye Ait Yazılar</h1>
+
+@{
+    foreach (var yazi in Model)
+    {
+        <div style="width:30%; float:left">
+            <a href="~/Yazi/YaziDetayi/@yazi.YaziID">
+                <img src="~/images/@yazi.KucukResim" style="width:100%" />
+            </a><br />
+            <a href="~/Yazi/YaziDetayi/@yazi.YaziID">
+                <span>@yazi.Baslik</span>
+            </a>
+            <br />
+            <span>@yazi.Yazar.YazarAdi</span>
+            <br />
+            <span>@yazi.Kategori.KategoriAdi</span>
+            <br />
+            <span>@yazi.EklenmeTarihi.ToShortDateString()</span>
+        </div>
+        <div style="float:left; width:2%">
+            &nbsp;
+        </div>
+    }
+}

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Blog Yönetim Paneli</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="width:70%; margin:0 auto">
+        <div style="width:100%; height:200px; margin-bottom:20px">
+            <div style="width:100%; height:200px; background-color:cornflowerblue">
+                <div style="padding-top:50px; padding-left:20px; height:70px">
+                    <span style="font-size:30px">BLOG YÖNETİM PANELİ</span>
+                </div>
+            </div>
+        </div>
+        <div style="width:100%; height:100px; text-align:center">
+            <div style="width:16%; float:left">
+                <a href="~/Kategori/AdminKategoriListeleme" class="btn btn-dark">Kategoriler</a>
+            </div>
+            <div style="width:16%; float:left">
+                <a href="~/Yazi/AdminYaziListeleme" class="btn btn-dark">Yazılar</a>
+            </div>
+            <div style="width:17%; float:left">
+                <a href="~/Yazar/AdminYazarListeleme" class="btn btn-dark">Yazarlar</a>
+            </div>
+            <div style="width:17%; float:left">
+                <a href="~/Mesaj/AdminMesajListeleme" class="btn btn-dark">Mesajlar</a>
+            </div>
+            <div style="width:17%; float:left">
+                <a href="~/Yorum/AdminYorumListeleme" class="btn btn-dark">Yorumlar</a>
+            </div>
+            <div style="width:17%; float:left">
+                <a href="~/Hakkinda/AdminHakkindaListeleme" class="btn btn-dark">Hakkında</a>
+            </div>
+        </div>
+        <div style="width:100%">
+            @RenderBody()
+        </div>
+    </div>
+
+</body>
+</html>

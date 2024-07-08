@@ -1,0 +1,65 @@
+﻿@model LayerEntity.Entities.Yazi
+
+@{
+    ViewData["Title"] = "AdminYaziGuncelle";
+    Layout = "~/Views/Shared/AdminSablon.cshtml";
+}
+
+<h1>Yazı Güncelle</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AdminYaziGuncelle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="YaziID" />
+            <div class="form-group">
+                <label asp-for="Baslik" class="control-label"></label>
+                <input asp-for="Baslik" class="form-control" />
+                <span asp-validation-for="Baslik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Icerik" class="control-label"></label>
+                <input asp-for="Icerik" class="form-control" />
+                <span asp-validation-for="Icerik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KucukResim" class="control-label"></label>
+                <input asp-for="KucukResim" class="form-control" />
+                <span asp-validation-for="KucukResim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuyukResim" class="control-label"></label>
+                <input asp-for="BuyukResim" class="form-control" />
+                <span asp-validation-for="BuyukResim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EklenmeTarihi" class="control-label"></label>
+                <input asp-for="EklenmeTarihi" class="form-control" />
+                <span asp-validation-for="EklenmeTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="YaziDurumu" /> @Html.DisplayNameFor(model => model.YaziDurumu)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="KategoriID" class="control-label"></label>
+                <select asp-for="KategoriID" class="form-control" asp-items="ViewBag.KategoriID"></select>
+                <span asp-validation-for="KategoriID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YazarID" class="control-label"></label>
+                <select asp-for="YazarID" class="form-control" asp-items="ViewBag.YazarID"></select>
+                <span asp-validation-for="YazarID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Güncelle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="AdminYaziListeleme">Listeye Dön</a>
+</div>
+

@@ -1,0 +1,35 @@
+﻿@model LayerEntity.Entities.Bulten
+
+@{
+    ViewData["Title"] = "BultenKullaniciEkle";
+    Layout = "~/Views/Shared/OnYuzSablon.cshtml";
+}
+
+<h1>Bülten Kaydı</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="BultenKullaniciEkle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AdSoyad" class="control-label"></label>
+                <input asp-for="AdSoyad" class="form-control" />
+                <span asp-validation-for="AdSoyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EklenmeTarihi" class="control-label"></label>
+                <input asp-for="EklenmeTarihi" class="form-control" />
+                <span asp-validation-for="EklenmeTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kayıt Ol" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

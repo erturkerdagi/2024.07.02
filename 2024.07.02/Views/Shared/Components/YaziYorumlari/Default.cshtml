@@ -1,0 +1,16 @@
+﻿@model IEnumerable<LayerEntity.Entities.Yorum>
+@foreach(var yorum in Model)
+{
+    <div style="width:100%; min-height:150px">
+        <div style="width:120px; float:left">
+            <img src="~/images/profil.jfif" style="width:100px" />
+        </div>
+        <div style="float:left; min-width:500px">
+            @yorum.YorumKullaniciAdi
+            <br />
+            @yorum.YorumBasligi
+            <br />
+            @yorum.YorumIcerigi
+        </div>
+    </div>
+}

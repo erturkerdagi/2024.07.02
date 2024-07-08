@@ -1,0 +1,78 @@
+﻿@model IEnumerable<LayerEntity.Entities.Yazi>
+
+@{
+    ViewData["Title"] = "AdminYaziListeleme";
+    Layout = "~/Views/Shared/AdminSablon.cshtml";
+}
+
+<h1>Yazı Listeleme</h1>
+
+<p>
+    <a asp-action="Create">Yeni Yazı Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Baslik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Icerik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KucukResim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuyukResim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EklenmeTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YaziDurumu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kategori)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yazar)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Baslik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Icerik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KucukResim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuyukResim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EklenmeTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YaziDurumu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kategori.KategoriAciklamasi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yazar.YazarAciklamasi)
+            </td>
+            <td>
+                <a asp-action="AdminYaziGuncelle" asp-route-id="@item.YaziID">Güncelle</a> |
+                <a asp-action="AdminYaziDetay" asp-route-id="@item.YaziID">Detay</a> |
+                <a asp-action="AdminYaziSil" asp-route-id="@item.YaziID">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+﻿@model LayerEntity.Entities.Kullanicilar
+@{
+    ViewData["Title"] = "AdminLogin";
+    Layout = "~/Views/Shared/AdminSablon.cshtml";
+}
+
+<div style="width:40%; margin:0 auto">
+    <form asp-action="AdminLogin">
+        <div style="width:100%; height:60px">
+            <div style="float:left; width:50%">
+                <span>Kullanıcı Adı: </span>
+            </div>
+            <div style="float:left; width:50%">
+                <input asp-for="KullaniciAdi" class="form-control" />
+            </div>
+        </div>
+        <div style="width:100%; height:60px">
+            <div style="float:left; width:50%">
+                <span>Şifre:  </span>
+            </div>
+            <div style="float:left; width:50%">
+                <input asp-for="Sifre" class="form-control" />
+            </div>
+        </div>
+        <div style="width:100%; height:60px; text-align:right">
+            <input type="submit" value="Giriş" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

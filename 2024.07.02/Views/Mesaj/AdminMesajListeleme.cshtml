@@ -1,0 +1,62 @@
+﻿@model IEnumerable<LayerEntity.Entities.Mesaj>
+
+@{
+    ViewData["Title"] = "MesajListeleme";
+    Layout = "~/Views/Shared/AdminSablon.cshtml";
+}
+
+<h1>Mesajlar</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MesajKullaniciAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MesajKullaniciEposta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Konu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MesajIcerik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MesajTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MesajDurumu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesajKullaniciAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesajKullaniciEposta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Konu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesajIcerik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesajTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesajDurumu)
+            </td>
+            <td>
+                <a asp-action="AdminMesajDetay" asp-route-id="@item.MesajID">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

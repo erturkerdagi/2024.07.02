@@ -1,0 +1,54 @@
+﻿@model LayerEntity.Entities.Yazar
+
+@{
+    ViewData["Title"] = "AdminYazarEkle";
+    Layout = "~/Views/Shared/AdminSablon.cshtml";
+}
+
+<h1>Yazar Ekle</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AdminYazarEkle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="YazarAdi" class="control-label"></label>
+                <input asp-for="YazarAdi" class="form-control" />
+                <span asp-validation-for="YazarAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YazarAciklamasi" class="control-label"></label>
+                <input asp-for="YazarAciklamasi" class="form-control" />
+                <span asp-validation-for="YazarAciklamasi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YazarResmi" class="control-label"></label>
+                <input asp-for="YazarResmi" class="form-control" />
+                <span asp-validation-for="YazarResmi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YazarEposta" class="control-label"></label>
+                <input asp-for="YazarEposta" class="form-control" />
+                <span asp-validation-for="YazarEposta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YazarSifre" class="control-label"></label>
+                <input asp-for="YazarSifre" class="form-control" />
+                <span asp-validation-for="YazarSifre" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="YazarDurumu" /> @Html.DisplayNameFor(model => model.YazarDurumu)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ekle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="AdminYazarListeleme" class="btn btn-success">Listeye Dön</a>
+</div>
+
